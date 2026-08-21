@@ -174,7 +174,7 @@ img { max-width: 100%; display: block; }
 .footer-bar .brand-fallback { color: var(--white); font-size: 20px; }
 .footer-bar .brand-tag { color: var(--white); }
 .legal { text-align: center; font-size: 11.5px; line-height: 1.8; }
-..legal a{color:#f9a72c!important;}
+.legal a{color:#f9a72c!important;}
 .socials { display: flex; gap: 12px; justify-content: flex-end; }
 .socials a {
   width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--orange);
