@@ -83,12 +83,12 @@ export const specs = [
 ];
 
 export const features = [
-  { label: 'Air Exports', icon: '/images/features/air-exports.svg' },
-  { label: 'Air Imports', icon: '/images/features/air-imports.svg' },
-  { label: 'Sea Exports', icon: '/images/features/sea-exports.svg' },
-  { label: 'Sea Imports', icon: '/images/features/sea-imports.svg' },
-  { label: 'HR&Payroll', icon: '/images/features/hr-payroll.svg' },
-  { label: 'Tally Integration', icon: '/images/features/tally.svg' },
+  { label: 'Air Exports', icon: '/images/air-export.jpg' },
+  { label: 'Air Imports', icon: '/images/air-import.jpg' },
+  { label: 'Sea Exports', icon: '/images/sea-export.jpg' },
+  { label: 'Sea Imports', icon: '/images/sea-import.jpg' },
+  { label: 'HR&Payroll', icon: '/images/hr.jpg' },
+  { label: 'Tally Integration', icon: '/images/tally.jpg' },
 ];
 
 export const footerSpecs = [
