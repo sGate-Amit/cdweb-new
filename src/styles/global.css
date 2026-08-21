@@ -141,7 +141,7 @@ img { max-width: 100%; display: block; }
 .contact { background: var(--grey-bg); padding: 60px 0 68px; }
 .contact .shell { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .contact-brand { display: grid; justify-items: center; gap: 6px; }
-.contact-brand img { max-width: 320px; }
+.contact-brand img { max-width: 320px; width:320px;height:auto; }
 .contact-brand .brand-fallback { font-size: 46px; }
 .contact-form-wrap h2 { font-size: 26px; margin-bottom: 18px; }
 .contact-form-wrap .demo-form input { border: 1px solid #cfcfcf; }
