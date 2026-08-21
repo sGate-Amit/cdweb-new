@@ -1,0 +1,4 @@
+# Copy to .dev.vars for local dev (never commit .dev.vars)
+RESEND_API_KEY=
+LEAD_TO_EMAIL=mailus@sgate.in
+LEAD_FROM_EMAIL=no-reply@cargodash.in

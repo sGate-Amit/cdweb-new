@@ -1,0 +1,19 @@
+---
+import { specs } from '../data/site';
+---
+<section class="section" id="specs">
+  <div class="shell">
+    <h2 class="section-title">Specifications</h2>
+    <div class="spec-grid">
+      {specs.map((s) => (
+        <div class="spec">
+          <span class="spec-mark" aria-hidden="true"></span>
+          <div>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
