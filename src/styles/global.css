@@ -155,7 +155,7 @@ img { max-width: 100%; display: block; }
   display: grid; place-items: center; gap: 2px; text-align: center; padding: 10px;
 }
 .feature span { font-size: 10.5px; font-weight: 700; color: var(--ink); line-height: 1.2; }
-.feature img { width: 52px; }
+.feature img { width:144px; }
 
 /* footer */
 .site-footer { background: var(--dark); color: #c9c9c9; padding: 56px 0 44px; }
