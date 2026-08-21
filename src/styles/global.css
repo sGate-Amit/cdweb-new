@@ -117,8 +117,8 @@ img { max-width: 100%; display: block; }
   padding: 28px 22px 26px; display: grid; gap: 14px; align-content: start;
 }
 .card-icon {
-  width: 128px; height: 128px; margin-inline: auto; border-radius: 50%;
-  border: 4px solid var(--orange); background: #f4f4f4;
+  /*width: 128px; height: 128px;*/ margin-inline: auto; /*border-radius: 50%;
+  border:0px solid var(--orange); background: #f4f4f4;*/
   display: grid; place-items: center; overflow: hidden;
 }
 .card-icon img { width: 78%; height: auto; }
@@ -150,8 +150,8 @@ img { max-width: 100%; display: block; }
 .features { padding: 62px 0 70px; }
 .feature-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 34px; }
 .feature {
-  width: 118px; height: 118px; border-radius: 50%;
-  border: 2px solid var(--orange); background: #f4f4f4;
+  /*width: 118px; height: 118px; border-radius: 50%;
+  border: 0px solid var(--orange); background: #f4f4f4;*/
   display: grid; place-items: center; gap: 2px; text-align: center; padding: 10px;
 }
 .feature span { font-size: 10.5px; font-weight: 700; color: var(--ink); line-height: 1.2; }
