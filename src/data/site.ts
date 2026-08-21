@@ -8,7 +8,7 @@ export const nav = [
 export const discover = [
   {
     title: 'Cloud based SaaS product',
-    icon: '/images/icons/cloud.svg',
+    icon: '/images/Cloud-based-SaaS-product.png',
     points: [
       'Ready for deployment at a short notice',
       'No upfront hardware and software cost',
@@ -18,7 +18,7 @@ export const discover = [
   },
   {
     title: 'Commercially suitable for everyone',
-    icon: '/images/icons/pricing.svg',
+    icon: '/images/Commercially-suitable-for-everyone.png',
     points: [
       'Pay as you go on a monthly basis',
       'Covers all modules - Air & Sea, Export & Import',
@@ -27,7 +27,7 @@ export const discover = [
   },
   {
     title: 'Centralized control',
-    icon: '/images/icons/control.svg',
+    icon: '/images/Key-Capabilities.png',
     points: [
       'Centralised credit and exposure control',
       'AWB stock control',
@@ -38,7 +38,7 @@ export const discover = [
   },
   {
     title: 'Integration with Tally',
-    icon: '/images/icons/tally.svg',
+    icon: '/images/Integration-with-Tally.png',
     points: [
       'Deferred mode – Monthly Data Dump in Excel',
       'Realtime Mode – API integration with daily sync',
@@ -46,7 +46,7 @@ export const discover = [
   },
   {
     title: 'Robust HR module',
-    icon: '/images/icons/hr.svg',
+    icon: '/images/HR-Module.png',
     points: [
       'Integration with Biometric Devices',
       'Leave Management',
