@@ -1,8 +1,8 @@
 export const nav = [
-  { label: 'Home', href: '#home' },
-  { label: 'Discover', href: '#discover' },
-  { label: 'Specs', href: '#specs' },
-  { label: 'Contact Us', href: '#contact' },
+  { label: 'Home', href: '/#home' },
+  { label: 'Discover', href: '/#discover' },
+  { label: 'Specs', href: '/#specs' },
+  { label: 'Contact Us', href: '/#contact' },
 ];
 
 export const discover = [
