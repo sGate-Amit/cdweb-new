@@ -4,10 +4,5 @@ const { size = 'md', light = false } = Astro.props;
 const scale = { sm: 20, md: 26, lg: 46 }[size];
 ---
 <a href="/" class="brand" aria-label="CargoDash home">
-  <span>
-    <span class="brand-fallback" style={`font-size:${scale}px;${light ? 'color:#fff' : ''}`}
-      >CARGO<span>DASH</span></span
-    >
-    <span class="brand-tag" style={light ? 'color:#fff' : ''}>An Agile Logistics ERP</span>
-  </span>
+<img src="/images/footer-logo.png" alt="CargoDash logistics ERP shown on a laptop" width="760" height="470" />
 </a>
