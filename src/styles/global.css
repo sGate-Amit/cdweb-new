@@ -57,7 +57,7 @@ img { max-width: 100%; display: block; }
   font-family: inherit; font-size: 12px; font-weight: 600;
   letter-spacing: .06em; text-transform: uppercase;
   padding: 12px 22px; border-radius: 3px;
-  background: var(--orange); color: var(--white);
+  background: var(--orange); color: #000!important;
   transition: background .18s ease;
 }
 .btn:hover { background: var(--orange-dark); color: var(--white); }
@@ -174,6 +174,7 @@ img { max-width: 100%; display: block; }
 .footer-bar .brand-fallback { color: var(--white); font-size: 20px; }
 .footer-bar .brand-tag { color: var(--white); }
 .legal { text-align: center; font-size: 11.5px; line-height: 1.8; }
+..legal a{color:#f9a72c!important;}
 .socials { display: flex; gap: 12px; justify-content: flex-end; }
 .socials a {
   width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--orange);
