@@ -1,5 +1,6 @@
 ---
-import { features } from '../data/site';
+import { getFeatures } from '../lib/cms';
+const features = await getFeatures();
 ---
 <section class="features">
   <div class="shell">

@@ -1,5 +1,6 @@
 ---
-import { discover } from '../data/site';
+import { getDiscover } from '../lib/cms';
+const discover = await getDiscover();
 const top = discover.slice(0, 3);
 const bottom = discover.slice(3);
 ---

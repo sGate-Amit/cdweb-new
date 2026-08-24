@@ -1,5 +1,6 @@
 ---
-import { specs } from '../data/site';
+import { getSpecs } from '../lib/cms';
+const specs = await getSpecs();
 ---
 <section class="section" id="specs">
   <div class="shell">
