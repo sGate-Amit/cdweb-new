@@ -2,6 +2,8 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
+const CHALLENGE_ANSWER: Record<string, string> = { heart: 'heart', truck: 'truck' };
+
 const CF7_ENDPOINT = 'https://web-api.cargodash.in/wp-json/contact-form-7/v1/contact-forms/12/feedback';
 
 export const POST: APIRoute = async ({ request }) => {
@@ -22,6 +24,11 @@ export const POST: APIRoute = async ({ request }) => {
 
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(String(data.email))) {
     return json({ ok: false, error: 'Please enter a valid email address.' }, 422);
+  }
+
+  const expected = CHALLENGE_ANSWER[String(data.challenge)];
+  if (!expected || data.answer !== expected) {
+    return json({ ok: false, error: 'Please select the correct icon to prove you are human.' }, 422);
   }
 
   const lead = {

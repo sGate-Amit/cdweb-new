@@ -81,6 +81,15 @@ img { max-width: 100%; display: block; }
 }
 .demo-form input::placeholder { color: #9b9b9b; }
 .demo-form input:focus { outline: 2px solid var(--navy); outline-offset: 1px; }
+.human-check { background: var(--white); border-radius: 3px; padding: 12px; text-align: center; }
+.human-check p { margin: 0 0 8px; font-size: 12px; color: var(--body); }
+.human-check strong { color: #e03b2f; }
+.human-check .choices { display: flex; justify-content: center; gap: 22px; }
+.human-check button {
+  border: 0; background: none; cursor: pointer; padding: 4px; border-radius: 4px;
+  font-size: 26px; line-height: 1; color: var(--navy);
+}
+.human-check button[aria-pressed='true'] { background: #ffe9c2; outline: 2px solid var(--orange); }
 .form-note { font-size: 12px; margin: 4px 0 0; min-height: 18px; }
 .form-note.ok { color: #0b6b32; }
 .form-note.err { color: #a3261c; }
