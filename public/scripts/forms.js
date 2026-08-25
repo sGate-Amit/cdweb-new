@@ -2,7 +2,7 @@
   const forms = document.querySelectorAll('[data-form]');
   forms.forEach((form) => {
     const note = form.querySelector('[data-note]');
-    const answer = form.querySelector('input[name="answer"]');
+    const answer = form.querySelector('input[name="kc_captcha"]');
     const buttons = form.querySelectorAll('.choices button');
 
     buttons.forEach((btn) => {

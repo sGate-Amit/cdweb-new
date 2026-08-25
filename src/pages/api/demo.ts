@@ -2,8 +2,6 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-const CHALLENGE_ANSWER: Record<string, string> = { heart: 'heart', truck: 'truck' };
-
 const CF7_ENDPOINT = 'https://web-api.cargodash.in/wp-json/contact-form-7/v1/contact-forms/12/feedback';
 
 export const POST: APIRoute = async ({ request }) => {
@@ -26,9 +24,9 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ ok: false, error: 'Please enter a valid email address.' }, 422);
   }
 
-  const expected = CHALLENGE_ANSWER[String(data.challenge)];
-  if (!expected || data.answer !== expected) {
-    return json({ ok: false, error: 'Please select the correct icon to prove you are human.' }, 422);
+  const kcCaptcha = String(data.kc_captcha ?? '').trim();
+  if (!kcCaptcha) {
+    return json({ ok: false, error: 'Please select the correct icon.' }, 422);
   }
 
   const lead = {
@@ -53,12 +51,18 @@ export const POST: APIRoute = async ({ request }) => {
   cf7Body.set('mobile', lead.mobile);
   cf7Body.set('organization', lead.organization);
   cf7Body.set('teamsize', lead.teamSize);
+  cf7Body.set('kc_captcha', kcCaptcha);
+  cf7Body.set('kc_honeypot', '');
 
   try {
     const res = await fetch(CF7_ENDPOINT, { method: 'POST', body: cf7Body });
-    const result: { status?: string; message?: string } = await res.json();
+    const result: { status?: string; message?: string; invalid_fields?: { field?: string }[] } = await res.json();
     if (result.status !== 'mail_sent') {
       console.error('CF7 feedback rejected', res.status, result);
+      const wrongIcon = result.invalid_fields?.some((f) => f.field === 'kc_captcha');
+      if (wrongIcon) {
+        return json({ ok: false, error: "That wasn't quite right — please try the verification again." }, 422);
+      }
       return json({ ok: false, error: 'We could not send your request. Please email mailus@sgate.in.' }, 502);
     }
   } catch (err) {
