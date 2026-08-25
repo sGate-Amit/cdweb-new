@@ -55,7 +55,13 @@ export const POST: APIRoute = async ({ request }) => {
   cf7Body.set('kc_honeypot', '');
 
   try {
-    const res = await fetch(CF7_ENDPOINT, { method: 'POST', body: cf7Body });
+    // Cloudflare Workers' fetch() sends no User-Agent by default; CF7's spam filter
+    // treats a missing/empty User-Agent as spam regardless of a valid captcha answer.
+    const res = await fetch(CF7_ENDPOINT, {
+      method: 'POST',
+      body: cf7Body,
+      headers: { 'User-Agent': 'CargoDash-Site/1.0 (+https://cargodash.in)' },
+    });
     const result: { status?: string; message?: string; invalid_fields?: { field?: string }[] } = await res.json();
     if (result.status !== 'mail_sent') {
       console.error('CF7 feedback rejected', res.status, result);
