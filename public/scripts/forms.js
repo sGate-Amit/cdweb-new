@@ -2,15 +2,6 @@
   const forms = document.querySelectorAll('[data-form]');
   forms.forEach((form) => {
     const note = form.querySelector('[data-note]');
-    const answer = form.querySelector('input[name="answer"]');
-    const buttons = form.querySelectorAll('.choices button');
-
-    buttons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-        answer.value = btn.dataset.answer;
-      });
-    });
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -30,8 +21,6 @@
         note.textContent = body.ok ? body.message : body.error;
         if (body.ok) {
           form.reset();
-          answer.value = '';
-          buttons.forEach((b) => b.setAttribute('aria-pressed', 'false'));
         }
       } catch {
         note.className = 'form-note err';
