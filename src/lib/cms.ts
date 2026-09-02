@@ -74,8 +74,11 @@ function extractPoints(html: string): string[] {
   return text ? [text] : [];
 }
 
+const UPLOADS_PREFIX = 'https://web-api.cargodash.in/wp-content/uploads/';
+
 function featuredImage(post: WPPost): string {
-  return post._embedded?.['wp:featuredmedia']?.[0]?.source_url ?? '';
+  const url = post._embedded?.['wp:featuredmedia']?.[0]?.source_url ?? '';
+  return url.startsWith(UPLOADS_PREFIX) ? `/api/media/${url.slice(UPLOADS_PREFIX.length)}` : url;
 }
 
 async function fetchCategoryPosts(key: keyof typeof CATEGORY_SLUGS): Promise<WPPost[]> {
